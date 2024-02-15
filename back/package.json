@@ -4,7 +4,6 @@
     "description": "Backend project using Sequelize with Node.js",
     "main": "index.js",
     "scripts": {
-        "start": "node index.js",
         "dev": "nodemon index.js"
     },
     "keywords": [
