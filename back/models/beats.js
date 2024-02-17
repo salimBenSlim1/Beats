@@ -10,6 +10,11 @@ const Beat = sequelize.define('Beat', {
       type: DataTypes.TEXT,
       allowNull: true
     },
+    sold:{
+      type:DataTypes.TINYINT,
+      defaultValue:false,
+      allowNull:true
+    },
     description: {
       type: DataTypes.TEXT,
       allowNull: true
