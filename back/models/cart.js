@@ -6,5 +6,5 @@ const Cart = sequelize.define('Cart', {
       primaryKey: true,
       autoIncrement: true
     }
-  });
+  },{tableName:'cart',timestamps:false});
 module.exports=Cart

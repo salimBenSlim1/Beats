@@ -5,6 +5,8 @@ beatsRouter.get('/getAllBeatsOfOneUser/:id',beatsController.getAllBeatsOfOneUser
 beatsRouter.post('/add',beatsController.addBeat)
 beatsRouter.put('/update/:id',beatsController.editBeat)
 beatsRouter.delete('/delete/:id',beatsController.deleteBeat)
+beatsRouter.put('/updateBought/:id',beatsController.updateBoughtBeat)
+beatsRouter.get('/getBought/:id',beatsController.getBeatsBought)
 
 
 

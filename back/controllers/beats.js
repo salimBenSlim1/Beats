@@ -1,4 +1,3 @@
-const { where } = require('sequelize')
 const Beat = require('../models/beats')
 module.exports={
     getAllBeatsOfOneUser:async(req,res)=>{
@@ -47,6 +46,26 @@ module.exports={
             let s =Beat.update(req.body,{where:{id:req.params.id}})
             if(s) return res.status(200).json('updated')
             return res.status(404).json('not updated')
+        }catch(err){
+            res.status(500).json('internal server err')
+        }
+    },
+    getBeatsBought:async(req,res)=>{
+        try{
+            let s=await Beat.findAll({where:{user_id:req.params.id}})
+            if (s) return res.status(200).json(s)
+            return res.status(404).json('err')
+
+        }catch(err){
+            res.status(500).json('internal server err')
+        }
+    },
+    // here update the sold to 1 and the user_id
+    updateBoughtBeat:async(req,res)=>{
+        try{
+            let s=await Beat.update(req.body,{where:{id:req.params.id}})
+            if (s) return res.status(200).json(s)
+            return res.status(404).json('err')
         }catch(err){
             res.status(500).json('internal server err')
         }
